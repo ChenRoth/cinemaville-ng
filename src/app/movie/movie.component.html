@@ -1,5 +1,11 @@
-<div>
-    {{movie.name}}
-    {{movie.year}}
-    {{movie.genre}}
+<div class="movie">
+    <div class="img-container">
+        <img [src]="movie.image" />
+    </div>
+    <div class="details">
+        <h4>{{movie.name}}</h4>
+        <p>{{movie.year}}</p>
+        <div class="grow"></div>
+        <p>{{movie.genre}}</p>
+    </div>
 </div>

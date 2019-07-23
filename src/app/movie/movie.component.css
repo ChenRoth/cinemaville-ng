@@ -1,0 +1,25 @@
+.movie {
+    display: flex;
+    padding: 24px;    
+    max-width: 500px;
+    border: 1px solid #444;
+    border-radius: 4px;
+}
+
+.img-container {
+    width: 200px;
+    margin-right: 24px;
+}
+
+.img-container img {
+    max-width: 100%;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+}
+
+.grow {
+    flex: 1;
+}

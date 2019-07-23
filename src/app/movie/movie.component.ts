@@ -8,5 +8,4 @@ import { Movie } from 'src/models/movie.model';
 })
 export class MovieComponent {
     @Input() movie: Movie;
-
 }
