@@ -4,11 +4,13 @@ import { Movie } from 'src/models/movie.model';
 import { MovieService } from './movie.service';
 
 export interface IState {
-    movies: Movie[]
+    movies: Movie[];
+    selectedMovie: Movie;
 }
 
 const initialState: IState = {
-    movies: []
+    movies: [],
+    selectedMovie: null
 }
 
 @Injectable({
@@ -41,7 +43,15 @@ export class StoreService {
         return this.currentState.movies;
     }
 
-    getMovieById(id: string): Movie {
-        return this.movies.find(movie => movie._id === id);
+    get selectedMovie(): Movie {
+        return this.currentState.selectedMovie;
+    }
+
+    getMovieById(id: string) {
+        this.movieService.getMovieDetailsFromServer(id).subscribe(movie => {
+            this.setState({
+                selectedMovie: movie
+            });
+        });
     }
 }

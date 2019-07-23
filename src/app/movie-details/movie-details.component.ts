@@ -11,13 +11,10 @@ import { Movie } from 'src/models/movie.model';
 export class MovieDetailsComponent implements OnInit {
     id: string;
 
-    constructor(private route: ActivatedRoute, private store: StoreService) { }
+    constructor(private route: ActivatedRoute, public store: StoreService) { }
 
     ngOnInit() {
         this.id = this.route.snapshot.paramMap.get('id');
-    }
-
-    get movie(): Movie {
-        return this.id ? this.store.getMovieById(this.id) : null;
+        this.store.getMovieById(this.id);
     }
 }

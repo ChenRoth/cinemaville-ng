@@ -14,4 +14,8 @@ export class MovieService {
     getMoviesFromServer(): Observable<Movie[]> {
         return this.httpClient.get<Movie[]>(`${API_URL}/movies`);
     }
+
+    getMovieDetailsFromServer(id: string): Observable<Movie> {
+        return this.httpClient.get<Movie>(`${API_URL}/movies/${id}`);
+    }
 }
