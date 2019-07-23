@@ -1,5 +1,5 @@
 <ul>
     <li *ngFor="let movie of store.movies">
-        {{movie.name}}
+        <app-movie [movie]="movie"></app-movie>
     </li>
 </ul>
