@@ -40,4 +40,8 @@ export class StoreService {
     get movies(): Movie[] {
         return this.currentState.movies;
     }
+
+    getMovieById(id: string): Movie {
+        return this.movies.find(movie => movie._id === id);
+    }
 }

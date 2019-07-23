@@ -10,6 +10,6 @@ export class MovieComponent {
     @Input() movie: Movie;
 
     get link(): string {
-        return `/movie/${this.movie._id}`;
+        return `/movies/${this.movie._id}`;
     }
 }

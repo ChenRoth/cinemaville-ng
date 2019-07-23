@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MovieComponent } from './movie/movie.component';
 import { MoviesComponent } from './movies/movies.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         MovieComponent,
-        MoviesComponent
+        MoviesComponent,
+        MovieDetailsComponent
     ],
     imports: [
         HttpClientModule,
