@@ -8,4 +8,8 @@ import { Movie } from 'src/models/movie.model';
 })
 export class MovieComponent {
     @Input() movie: Movie;
+
+    get link(): string {
+        return `/movie/${this.movie._id}`;
+    }
 }
