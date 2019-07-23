@@ -1,3 +1,3 @@
-<div>
-    <app-movie *ngFor="let movie of store.movies" [movie]="movie"></app-movie>
+<div *ngFor="let movie of store.movies" class="movie-wrapper">
+    <app-movie [movie]="movie"></app-movie>
 </div>
