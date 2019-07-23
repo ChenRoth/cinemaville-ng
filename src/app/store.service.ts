@@ -22,10 +22,16 @@ export class StoreService {
         return this._store.getValue();
     }
 
+    setState(newState: Partial<IState>) {
+        this._store.next({
+            ...this.currentState,
+            ...newState,
+        })
+    }
+
     getMovies() {
         this.movieService.getMoviesFromServer().subscribe(movies => {
-            this._store.next({
-                ...this.currentState,
+            this.setState({
                 movies,
             });
         })
