@@ -52,8 +52,19 @@ export class StoreService {
         return this.currentState.movies;
     }
 
+    get filteredMovies(): Movie[] {
+      if (!this.selectedGenre) {
+        return this.movies;
+      }
+      return this.currentState.movies.filter(movie => movie.genre === this.selectedGenre);
+    }
+
     get genres(): Genre[] {
         return this.currentState.genres;
+    }
+
+    get selectedGenre(): IState['selectedGenre'] {
+        return this.currentState.selectedGenre;
     }
 
     get selectedMovie(): Movie {
