@@ -10,7 +10,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { GenreFilterComponent } from './genre-filter/genre-filter.component';
 import { NewMovieComponent } from './new-movie/new-movie.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatCardModule} from '@angular/material';
+import {MatCardModule, MatSelectModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 export const API_URL = 'http://localhost:3000';
@@ -31,6 +31,7 @@ export const API_URL = 'http://localhost:3000';
         BrowserModule,
         AppRoutingModule,
         MatCardModule,
+        MatSelectModule,
         BrowserAnimationsModule
     ],
     providers: [],

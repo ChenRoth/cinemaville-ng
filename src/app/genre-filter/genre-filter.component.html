@@ -1,6 +1,7 @@
-<label>
-  <select (change)="selectGenre($event)">
-    <option value="">all genres</option>
-    <option *ngFor="let genre of store.genres" [value]="genre.name">{{genre.name}}</option>
-  </select>
-</label>
+<mat-form-field class="filter">
+  <mat-label>Filter by Genre</mat-label>
+  <mat-select (selectionChange)="selectGenre($event)">
+    <mat-option value="">all genres</mat-option>
+    <mat-option *ngFor="let genre of store.genres" [value]="genre.name">{{genre.name}}</mat-option>
+  </mat-select>
+</mat-form-field>

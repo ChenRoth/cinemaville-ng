@@ -13,8 +13,7 @@ export class GenreFilterComponent implements OnInit {
   ngOnInit() {
   }
 
-  selectGenre(e) {
-    const genreName = e.target.value;
+  selectGenre({value: genreName}) {
     this.store.setSelectedGenre(genreName);
   }
 
