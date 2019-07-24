@@ -1,0 +1,15 @@
+.header {
+  margin-bottom: 12px;
+  background: #444;
+  padding: 16px;
+}
+
+.link {
+  margin-right: 24px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

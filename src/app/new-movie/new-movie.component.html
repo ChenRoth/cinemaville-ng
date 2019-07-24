@@ -1,0 +1,47 @@
+<form class="form" (ngSubmit)="submitMovie()" [formGroup]="movieForm">
+  <h3 class="title">ADD A MOVIE</h3>
+  <div class="field">
+    <label>
+      Name:
+    </label>
+    <input type="text" formControlName="name">
+  </div>
+  <div class="field">
+    <label>
+      Year:
+    </label>
+    <input type="number" formControlName="year">
+  </div>
+  <div class="field">
+    <label>
+      Genre:
+    </label>
+    <select formControlName="genre">
+      <option value="">Pick a genre</option>
+      <option *ngFor="let genre of store.genres" [value]="genre.name">{{genre.name}}</option>
+    </select>
+  </div>
+  <div formArrayName="actors" class="field">
+    <p>Actors <button type="button" (click)="addActor()">+</button></p>
+    <div *ngFor="let actor of actors.controls; let i=index">
+      <label>
+        Actor #{{i + 1}}:
+      </label>
+      <input type="text" [formControlName]="i">
+      <button type="button" (click)="removeActor(i)">-</button>
+    </div>
+  </div>
+  <div class="field">
+    <label>
+      Image Link:
+    </label>
+    <input type="text" formControlName="image">
+  </div>
+  <div class="field">
+    <label>
+      Trailer Link:
+    </label>
+    <input type="text" formControlName="video">
+  </div>
+  <button type="submit" [disabled]="!movieForm.valid">SAVE</button>
+</form>

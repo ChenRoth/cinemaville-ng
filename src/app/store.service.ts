@@ -92,4 +92,13 @@ export class StoreService {
         selectedGenre: genreName,
       });
     }
+
+    addMovie(movie: Movie) {
+      return this.movieService.addMovieToServer(movie).subscribe(movieFromServer => {
+        // it's important to add the movieForm retrieved from the server cause it contains the server-generated id!
+        this.setState({
+          movies: this.movies.concat(movieFromServer),
+        });
+      });
+    }
 }

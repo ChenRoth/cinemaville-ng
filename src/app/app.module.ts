@@ -8,6 +8,8 @@ import { MovieComponent } from './movie/movie.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { GenreFilterComponent } from './genre-filter/genre-filter.component';
+import { NewMovieComponent } from './new-movie/new-movie.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 export const API_URL = 'http://localhost:3000';
 
@@ -17,9 +19,12 @@ export const API_URL = 'http://localhost:3000';
         MovieComponent,
         MoviesComponent,
         MovieDetailsComponent,
-        GenreFilterComponent
+        GenreFilterComponent,
+        NewMovieComponent
     ],
     imports: [
+        ReactiveFormsModule,
+        FormsModule,
         HttpClientModule,
         BrowserModule,
         AppRoutingModule
