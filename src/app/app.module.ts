@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MovieComponent } from './movie/movie.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { GenreFilterComponent } from './genre-filter/genre-filter.component';
 
 export const API_URL = 'http://localhost:3000';
 
@@ -15,7 +16,8 @@ export const API_URL = 'http://localhost:3000';
         AppComponent,
         MovieComponent,
         MoviesComponent,
-        MovieDetailsComponent
+        MovieDetailsComponent,
+        GenreFilterComponent
     ],
     imports: [
         HttpClientModule,

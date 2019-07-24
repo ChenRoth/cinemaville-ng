@@ -1,0 +1,6 @@
+<label>
+  <select (change)="selectGenre($event)">
+    <option value="">all genres</option>
+    <option *ngFor="let genre of store.genres" [value]="genre.name">{{genre.name}}</option>
+  </select>
+</label>

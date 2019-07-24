@@ -9,12 +9,14 @@ export interface IState {
     movies: Movie[];
     genres: Genre[];
     selectedMovie: Movie;
+    selectedGenre: string;
 }
 
 const initialState: IState = {
     movies: [],
     selectedMovie: null,
     genres: [],
+    selectedGenre: null,
 }
 
 @Injectable({
@@ -71,6 +73,12 @@ export class StoreService {
         this.setState({
           genres,
         });
+      });
+    }
+
+    setSelectedGenre(genreName: string) {
+      this.setState({
+        selectedGenre: genreName,
       });
     }
 }
