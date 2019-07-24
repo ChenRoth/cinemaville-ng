@@ -13,5 +13,6 @@ export class MoviesComponent implements OnInit {
 
     ngOnInit() {
         this.store.getMovies();
+        this.store.getGenres();
     }
 }

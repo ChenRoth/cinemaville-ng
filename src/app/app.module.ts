@@ -8,6 +8,8 @@ import { MovieComponent } from './movie/movie.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
+export const API_URL = 'http://localhost:3000';
+
 @NgModule({
     declarations: [
         AppComponent,

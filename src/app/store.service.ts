@@ -2,15 +2,19 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Movie } from 'src/models/movie.model';
 import { MovieService } from './movie.service';
+import {Genre} from '../models/genre.model';
+import {GenreService} from './genre.service';
 
 export interface IState {
     movies: Movie[];
+    genres: Genre[];
     selectedMovie: Movie;
 }
 
 const initialState: IState = {
     movies: [],
-    selectedMovie: null
+    selectedMovie: null,
+    genres: [],
 }
 
 @Injectable({
@@ -18,7 +22,10 @@ const initialState: IState = {
 })
 export class StoreService {
     private readonly _store = new BehaviorSubject<IState>(initialState);
-    constructor(private movieService: MovieService) { }
+    constructor(
+      private movieService: MovieService,
+      private genreService: GenreService
+    ) { }
 
     get currentState(): IState {
         return this._store.getValue();
@@ -43,6 +50,10 @@ export class StoreService {
         return this.currentState.movies;
     }
 
+    get genres(): Genre[] {
+        return this.currentState.genres;
+    }
+
     get selectedMovie(): Movie {
         return this.currentState.selectedMovie;
     }
@@ -53,5 +64,13 @@ export class StoreService {
                 selectedMovie: movie
             });
         });
+    }
+
+    getGenres() {
+      this.genreService.getGenresFromServer().subscribe(genres => {
+        this.setState({
+          genres,
+        });
+      });
     }
 }

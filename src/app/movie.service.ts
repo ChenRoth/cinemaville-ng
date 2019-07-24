@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { Movie } from 'src/models/movie.model';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-
-const API_URL = 'http://localhost:3000';
+import {API_URL} from './app.module';
 
 @Injectable({
     providedIn: 'root'
