@@ -1,4 +1,6 @@
-<app-genre-filter></app-genre-filter>
-<div *ngFor="let movie of store.filteredMovies" class="movie-wrapper">
+<div class="movies">
+  <app-genre-filter></app-genre-filter>
+  <div *ngFor="let movie of store.filteredMovies" class="movie-wrapper">
     <app-movie [movie]="movie"></app-movie>
+  </div>
 </div>
