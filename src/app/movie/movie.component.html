@@ -1,11 +1,10 @@
-<div class="movie" [routerLink]="link">
-  <div class="img-container">
-    <img [src]="movie.image"/>
-  </div>
-  <div class="details">
-    <h4>{{movie.name}}</h4>
-    <p>{{movie.year}}</p>
-    <div class="grow"></div>
-    <p>{{movie.genre}}</p>
-  </div>
-</div>
+<mat-card [routerLink]="link" class="movie">
+  <mat-card-header>
+    <mat-card-title>{{movie.name | uppercase}}</mat-card-title>
+    <mat-card-subtitle>{{movie.year}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="movie.image" [alt]="movie.name">
+  <mat-card-content>
+    <p>{{movie.genre | titlecase}}</p>
+  </mat-card-content>
+</mat-card>
