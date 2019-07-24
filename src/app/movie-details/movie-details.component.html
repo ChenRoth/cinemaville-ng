@@ -1,4 +1,7 @@
 <div *ngIf="store.selectedMovie">
     {{store.selectedMovie.name}}
   <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="788.54" height="443" type="text/html" [src]="trailerLink"></iframe>
+  <ul>
+    <li *ngFor="let actor of store.selectedMovie.actors">{{actor}}</li>
+  </ul>
 </div>
