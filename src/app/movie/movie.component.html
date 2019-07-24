@@ -1,13 +1,11 @@
-<a [routerLink]="link">
-    <div class="movie">
-        <div class="img-container">
-            <img [src]="movie.image" />
-        </div>
-        <div class="details">
-            <h4>{{movie.name}}</h4>
-            <p>{{movie.year}}</p>
-            <div class="grow"></div>
-            <p>{{movie.genre}}</p>
-        </div>
-    </div>
-</a>
+<div class="movie" [routerLink]="link">
+  <div class="img-container">
+    <img [src]="movie.image"/>
+  </div>
+  <div class="details">
+    <h4>{{movie.name}}</h4>
+    <p>{{movie.year}}</p>
+    <div class="grow"></div>
+    <p>{{movie.genre}}</p>
+  </div>
+</div>
